@@ -34,9 +34,9 @@ export default {
   methods: {
     ...mapMutations(['addModuleACountMutation', 'setModuleACountMutation',
       'resetModuleACount', 'addModuleBCountMutation',
-      'addCount']),
+      'setCountMutation']),
     ...mapActions(['setModuleACountAction', 'setCountAction']),
-    // 增加模块count的值
+    // 增加模块A count的值
     addMutation() {
       this.addModuleACountMutation(10)
     },
@@ -52,14 +52,15 @@ export default {
     submitReset() {
       this.resetModuleACount()
     },
+
     // 提交顶层store的mutation
     submitMutation1() {
-      this.addCount(20)
+      this.setCountMutation({value: '模块A设置顶层store的mutation'})
       console.log(this.$store)
     },
     // 提交顶层store的action
     submitAction1() {
-      this.setCountAction({value: '模块A设置顶层store的count'})
+      this.setCountAction({value: '模块A设置顶层store的action'})
     },
     // 修改模块B的count
     addModuleBCount() {
