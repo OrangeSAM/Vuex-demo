@@ -2,8 +2,9 @@
 <template>
   <div>
     <div class="content">
-      <div>{{count}}</div>
-      <div>{{doubleCountGetters}}</div>
+      <div>count: {{count}}</div>
+      <div>双倍count 来自计算属性: {{doubleCountGetters}}</div>
+      <div>双倍count 来自mapGetters: {{doubleCount}}</div>
     </div>
     <div class="operate">
     <button @click="addCount">增加 count</button>
@@ -16,9 +17,11 @@
 
 <script>
 import store from '../store/index'
+import {mapGetters} from 'vuex'
 export default {
   name: 'WithoutRegister',
   computed: {
+    ...mapGetters(['doubleCount']),
     count() {
       return store.state.count
     },

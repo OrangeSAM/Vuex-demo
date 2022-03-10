@@ -5,7 +5,7 @@
       <div>count 简化写法: {{countSimplified}}</div>
       <div>双倍 count: {{doubleCount}}</div>
       <div>四倍 count: {{fourfoldCount}}</div>
-      <div>四倍 count alias: {{fourfoldCountAlias}}</div>
+      <div>四倍 count 别称: {{fourfoldCountAlias}}</div>
       <div>1 和 count 相加: {{countPlus}}</div>
     </div>
     <div class="operate">
@@ -68,7 +68,12 @@ export default {
       })
     },
     reset () {
-      this.resetCount()
+      // this.resetCount()
+      // this.$store.commit('resetCount')
+      this.$store.commit({
+        type: 'resetCount',
+        value:0
+      })
     }
   },
 }
