@@ -56,7 +56,6 @@ export default {
     // 提交顶层store的mutation
     submitMutation1() {
       this.setCountMutation({value: '模块A设置顶层store的mutation'})
-      console.log(this.$store)
     },
     // 提交顶层store的action
     submitAction1() {
